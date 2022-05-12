@@ -1,5 +1,7 @@
 package mvvm.src.app_package
 
+import mvvm.upperCase
+
 fun mvvmFragmentJava(
         pageName: String,
         fragmentPackageName: String,
@@ -101,14 +103,14 @@ package $fragmentPackageName
 
 
 import android.os.Bundle
-import ${packageName}.databinding.Fragment${pageName}Binding
+import ${packageName}.databinding.Fragment${pageName.upperCase()}Binding
 import com.lfy.baselibrary.ui.fragment.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 import ${packageName}.R
 ${if (needViewModel){""}else{"import com.jdjinsui.baselibrary.vm.BaseViewModel"}}
 
 @AndroidEntryPoint
-class ${pageName}Fragment : BaseFragment<Fragment${pageName}Binding,${if(needViewModel){"${pageName}ViewModel"}else{"BaseViewModel"}}>(){
+class ${pageName}Fragment : BaseFragment<Fragment${pageName.upperCase()}Binding,${if(needViewModel){"${pageName}ViewModel"}else{"BaseViewModel"}}>(){
     
     companion object {
         fun newInstance() = ${pageName}Fragment()

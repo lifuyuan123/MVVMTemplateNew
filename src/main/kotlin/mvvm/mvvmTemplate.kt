@@ -36,7 +36,7 @@ val MVVMTemplate
         //是否需要生成Activity
         val needActivity = booleanParameter {
             name = "Generate Activity"
-            default = false
+            default = true
             help = "是否需要生成 Activity ? 不勾选则不生成"
         }
 
@@ -73,7 +73,7 @@ val MVVMTemplate
         //是否需要生成Fragment
         val needFragment = booleanParameter {
             name = "Generate Fragment"
-            default = true
+            default = false
             help = "是否需要生成 Fragment ? 不勾选则不生成"
         }
 

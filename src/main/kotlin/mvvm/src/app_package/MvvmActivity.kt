@@ -1,5 +1,7 @@
 package mvvm.src.app_package
 
+import mvvm.upperCase
+
 
 fun mvvmActivityJava(
         packageName: String,
@@ -80,14 +82,14 @@ fun mvvmActivityKt(
 package $activityPackageName
 
 import android.os.Bundle
-import ${packageName}.databinding.Activity${pageName}Binding
+import ${packageName}.databinding.Activity${pageName.upperCase()}Binding
 import com.lfy.baselibrary.ui.activity.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 import ${packageName}.R
 ${if (needViewModel){""}else{"import com.jdjinsui.baselibrary.vm.BaseViewModel"}}
 
 @AndroidEntryPoint
-class ${pageName}Activity : BaseActivity<Activity${pageName}Binding,${if(needViewModel){"${pageName}ViewModel"}else{"BaseViewModel"}}>() {
+class ${pageName}Activity : BaseActivity<Activity${pageName.upperCase()}Binding,${if(needViewModel){"${pageName}ViewModel"}else{"BaseViewModel"}}>() {
 
     override fun getLayout() = R.layout.${activityLayoutName}
 
