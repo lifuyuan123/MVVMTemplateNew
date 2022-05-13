@@ -5,6 +5,7 @@ import com.android.tools.idea.wizard.template.RecipeExecutor
 import mvvm.androidManifest.manifestTemplateXml
 import mvvm.src.app_package.*
 import mvvm.res.layout.templateXml
+import org.jetbrains.eval4j.char
 import java.lang.StringBuilder
 
 /**
@@ -141,11 +142,18 @@ fun RecipeExecutor.mvvmRecipe(
 }
 
 /**
- * 首字符大写
+ * 处理layout格式
  */
 fun String.upperCase(): String {
-    return StringBuilder()
-        .append(Character.toUpperCase(toCharArray()[0]))
-        .append(substring(1).toLowerCase())
-        .toString()
+    val sb = StringBuilder()
+    val chars = toCharArray()
+    for (index in chars.indices) {
+        if (chars[index] in 'A'..'Z') {
+            chars[index] = chars[index] + 32
+            sb.append("${if (index != 0) "_" else ""}${chars[index]}")
+        } else {
+            sb.append(chars[index])
+        }
+    }
+    return sb.toString()
 }

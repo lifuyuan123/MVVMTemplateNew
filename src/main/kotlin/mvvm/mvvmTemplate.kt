@@ -47,7 +47,7 @@ val MVVMTemplate
             visible = { needActivity.value }
             help = "Activity 创建之前需要填写 Activity 的布局名,若布局已创建就直接填写此布局名,若还没创建此布局,请勾选下面的单选框"
             constraints = listOf(Constraint.LAYOUT, Constraint.NONEMPTY)
-            suggest = { "${activityToLayout(pageName.value.toLowerCase())}" }
+            suggest = { "${activityToLayout(pageName.value.upperCase())}" }
         }
 
         //是否需要Activity的布局
@@ -85,7 +85,7 @@ val MVVMTemplate
             visible = { needFragment.value }
             help = "Fragment 创建之前需要填写 Fragment 的布局名,若布局已创建就直接填写此布局名,若还没创建此布局,请勾选下面的单选框"
             constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
-            suggest = { "${fragmentToLayout(pageName.value.toLowerCase())}" }
+            suggest = { "${fragmentToLayout(pageName.value.upperCase())}" }
         }
 
         //是否需要Fragment的布局
