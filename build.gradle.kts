@@ -21,8 +21,8 @@ version = properties("pluginVersion")
 
 // Configure project's dependencies
 repositories {
-//    mavenCentral()
-    maven("https://maven.aliyun.com/repository/public")
+    mavenCentral()
+//    maven("https://maven.aliyun.com/repository/public")
 }
 dependencies {
     compileOnly(files("lib/wizard-template.jar"))

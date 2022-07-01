@@ -77,11 +77,8 @@ import javax.inject.Inject
 import com.lfy.baselibrary.vm.BaseViewModel
 
 @HiltViewModel
-class ${pageName}ViewModel @Inject constructor() : BaseViewModel(){
+class ${pageName}ViewModel @Inject constructor(private val repository: ${pageName}Repository) : BaseViewModel(){
 
-    @Inject lateinit var repository: ${pageName}Repository
-
-   
 }
 
 """
