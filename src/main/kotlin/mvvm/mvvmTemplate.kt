@@ -6,7 +6,7 @@ import java.io.File
 /**
  * @CreateDate:     2021/4/1
  * @Author:         Creator
- * @Description:    MVPArms模板配置
+ * @Description:    MVVM模板配置
  */
 val MVVMTemplate
     get() = template {
@@ -104,24 +104,6 @@ val MVVMTemplate
             help = "Fragment 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
             suggest = {"${packageName.value}.${pageName.value.toLowerCase()}"}
         }
-
-
-//        val needContract = booleanParameter {
-//            name = "Generate Contract"
-//            default = true
-//            help = "是否需要生成 Contract ? 不勾选则不生成"
-//        }
-//
-//
-//        val contractPackageName = stringParameter {
-//            name = "Contract Package Name"
-//            default = "Contract Package Name"
-//            constraints = listOf(Constraint.PACKAGE)
-//            visible = { needContract.value }
-//            help = "Contract 将被输出到此包下,请认真核实此包名是否是你需要输出的目标包名"
-//            suggest = { "${packageName.value}.mvp.contract" }
-//        }
-
 
         val needRepository = booleanParameter {
             name = "Generate Repository"
